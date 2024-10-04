@@ -17,6 +17,9 @@ export const About = () => {
             <p>Olá. <br /> Eu sou Francisco, prazer em conhecê-lo.</p>
           </div>
           <div>
+            <p>Sou um profissional de TI com mais de 20 anos de experiência,
+              unindo uma sólida base em infraestrutura e suporte a um crescente
+              foco em desenvolvimento de software.</p>  <br />
             <p>Sou apaixonado por construir softwares excelentes que melhorem a vida das pessoas ao meu redor. Sou especialista em criar software para clientes que vão desde indivíduos e pequenas empresas até grandes corporações empresariais.</p>  
           </div>
         </div>
