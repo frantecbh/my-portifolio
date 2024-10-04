@@ -19,11 +19,11 @@ const handelClickNav = () => {
        {/* desktop */}
    
           <ul className='hidden md:flex'>
-            <li>Home</li>
-            <li>Sobre</li>
-            <li>Skils</li>
-            <li>Projetos</li>
-            <li>Contatos</li>
+            <li className='hover:border-b-2 hover:border-lime-600'>Home</li>
+            <li className='hover:border-b-2 hover:border-lime-600'>Sobre</li>
+            <li className='hover:border-b-2 hover:border-lime-600'>Skils</li>
+            <li className='hover:border-b-2 hover:border-lime-600'>Projetos</li>
+            <li className='hover:border-b-2 hover:border-lime-600'>Contatos</li>
           </ul>  
     
         {/* Hamburger */}   
