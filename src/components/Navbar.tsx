@@ -2,10 +2,6 @@
 import { FaBars, FaTimes, FaLinkedin, FaGithub } from 'react-icons/fa'
 import imageLogo from '../assets/logo.png'
 import { useState } from 'react'
-import { BsFillPersonLinesFill } from 'react-icons/bs'
-import { HiOutlineMail } from 'react-icons/hi'
-
-
 
 export const Navbar = () => {
 
