@@ -1,4 +1,5 @@
 import { HiArrowNarrowRight } from "react-icons/hi"
+import { Link } from "react-scroll";
 import { TypeAnimation } from 'react-type-animation';
 
 
@@ -26,12 +27,18 @@ export const Home = () => {
       Sou um desenvolvedor full-stack especializado em construir experiências digitais excepcionais. Atualmente, estou focado em construir aplicativos web full-stack responsivos.
       </p>
       <div>
-        <button className='text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-lime-600 hover:border-lime-600'>
-          View Work
+      
+          <button className='text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-lime-600 hover:border-lime-600'>
+          <Link to='projetos' smooth={true} duration={500}>
+            Projetos
+          </Link>
+         
           <span className='group-hover:rotate-90 duration-300'>
             <HiArrowNarrowRight className='ml-3 ' />
           </span>
         </button>
+         
+     
       </div>
     </div>
   </div>
