@@ -6,11 +6,12 @@ export const Projetos = () => {
   return (
     <div id='projetos' className='w-full md:h-screen'>
       <div className='max-w-[1000px] mx-auto flex flex-col justify-center w-full h-full px-4'>
-        <div className='pb-8'>
+        <div className='py-8'>
             <p className='text-4xl font-bold inline border-b-4 border-lime-600'>Projetos</p>
             <p className="py-6">Projetos desenvolvidos por mim</p>
         </div>
         {/* container */}
+        <div className=' bg-slate-700 p-4 w-full rounded-lg'>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
               {/* Grid item */}
           <div
@@ -52,7 +53,10 @@ export const Projetos = () => {
                 </div>
               </div>
           </div>
+
         </div>
+        </div>
+       
       </div>
     </div>
   )
