@@ -32,7 +32,7 @@ const handelClickNav = () => {
             </li>
             <li className='hover:border-b-2 hover:border-lime-600'>
             <Link to='skills' smooth={true} duration={500}>
-            skills
+            Skills
           </Link>
               </li>
             <li className='hover:border-b-2 hover:border-lime-600'>
@@ -62,7 +62,7 @@ const handelClickNav = () => {
                 Sobre
               </Link></li>
             <li className='py-6 text-4xl'> <Link to='skills' smooth={true} duration={500}>
-            skills
+            Skills
           </Link></li>
             <li className='py-6 text-4xl'> <Link to='projetos' smooth={true} duration={500}>
             Projetos
