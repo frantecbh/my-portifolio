@@ -22,27 +22,27 @@ const handelClickNav = () => {
           <ul className='hidden md:flex'>
             <li className='hover:border-b-2 hover:border-lime-600'>
              <Link to='home' smooth={true} duration={500}>
-                Home
+                HOME
               </Link>
             </li>
             <li className='hover:border-b-2 hover:border-lime-600'>
               <Link to='about' smooth={true} duration={500}>
-                Sobre
+                SOBRE
               </Link>
             </li>
             <li className='hover:border-b-2 hover:border-lime-600'>
             <Link to='skills' smooth={true} duration={500}>
-            Skills
+            SKILLS
           </Link>
               </li>
             <li className='hover:border-b-2 hover:border-lime-600'>
             <Link to='projetos' smooth={true} duration={500}>
-            Projetos
+            PROJETOS
           </Link>
               </li>
             <li className='hover:border-b-2 hover:border-lime-600'>
             <Link to='contact' smooth={true} duration={500}>
-            Contatos
+            CONTATO
           </Link>
               </li>
           </ul>  
@@ -54,23 +54,26 @@ const handelClickNav = () => {
         {/* mobile */}   
         <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 max-w-[50%] w-full h-screen bg-slate-900 flex flex-col justify-center items-center' }>
             <li className='py-6 text-4xl'>
-                <Link to='home' smooth={true} duration={500}>
+                <Link onClick={handelClickNav}  to='home' smooth={true} duration={500}>
                   Home
                 </Link>
             </li>
-            <li className='py-6 text-4xl'> <Link to='about' smooth={true} duration={500}>
+            <li className='py-6 text-4xl'> 
+              <Link onClick={handelClickNav}  to='about' smooth={true} duration={500}>
                 Sobre
               </Link></li>
-            <li className='py-6 text-4xl'> <Link to='skills' smooth={true} duration={500}>
+            <li className='py-6 text-4xl'> 
+              <Link onClick={handelClickNav}  to='skills' smooth={true} duration={500}>
             Skills
-          </Link></li>
-            <li className='py-6 text-4xl'> <Link to='projetos' smooth={true} duration={500}>
-            Projetos
-          </Link></li>
+            </Link></li>
+            <li className='py-6 text-4xl'> 
+              <Link onClick={handelClickNav}  to='projetos' smooth={true} duration={500}>
+                  Projetos
+              </Link></li>
             <li className='py-6 text-4xl'>
-            <Link to='contact' smooth={true} duration={500}>
-            Contato
-          </Link>
+            <Link onClick={handelClickNav}  to='contact' smooth={true} duration={500}>
+                Contato
+              </Link>
             </li>
           </ul> 
        {/* social icons */}  
