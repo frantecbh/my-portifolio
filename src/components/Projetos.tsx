@@ -10,7 +10,7 @@ export const Projetos = () => {
             <p className="py-6">Projetos desenvolvidos por mim</p>
         </div>
         {/* container */}
-        <div className=' bg-slate-700 p-4 w-full rounded-lg'>
+        <div className=' bg-slate-800 p-4 w-full rounded-lg'>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
               {/* Grid item */}
 

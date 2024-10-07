@@ -4,6 +4,7 @@ import encurtaLink from '../assets/projetos/encuratlink.png'
 import todolist from '../assets/projetos/todolist.png'
 import qrcode from '../assets/projetos/qrcode.png'
 import gallery from '../assets/projetos/gallery.png'
+import socialLogin from '../assets/projetos/socialLogin.png'
 
 export const data=[
     {
@@ -47,6 +48,13 @@ export const data=[
         image:gallery,
         github:"https://github.com/frantecbh/gallery",
         live:"https://gallery.frantecit.com.br/",
+    },
+    {
+        id:6,
+        name:"Social Profiles",
+        image:socialLogin,
+        github:"https://github.com/frantecbh/social-link-profile",
+        live:"https://frantecbh.github.io/social-link-profile/",
     },
 
 
