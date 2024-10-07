@@ -50,7 +50,7 @@ export const data=[
         live:"https://gallery.frantecit.com.br/",
     },
     {
-        id:6,
+        id:7,
         name:"Social Profiles",
         image:socialLogin,
         github:"https://github.com/frantecbh/social-link-profile",
