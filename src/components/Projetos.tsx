@@ -1,51 +1,65 @@
-import { data } from '../data/data'
+import { FaGithub } from 'react-icons/fa'
+import { projects, hostOf } from '../data/data'
 
+export const Projetos = () => (
+  <section id="projetos" className="border-t border-line">
+    <div className="mx-auto max-w-page px-5 py-20 sm:px-8 lg:py-28">
+      <h2 className="section-title">Projetos</h2>
+      <p className="mt-4 max-w-prose text-muted">
+        Aplicações que desenvolvi e publiquei. Todas estão no ar para você testar.
+      </p>
 
-export const Projetos = () => {
-  return (
-    <div id='projetos' className='w-full md:h-screen'>
-      <div className='max-w-[1000px] mx-auto flex flex-col justify-center w-full h-full px-4'>
-        <div className='py-8'>
-            <p className='text-4xl font-bold inline border-b-4 border-lime-600'>Projetos</p>
-            <p className="py-6">Projetos desenvolvidos por mim</p>
-        </div>
-        {/* container */}
-        <div className=' bg-slate-800 p-4 w-full rounded-lg'>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {/* Grid item */}
+      <ul className="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-2">
+        {projects.map((project) => (
+          <li key={project.id}>
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noreferrer"
+              className="group block overflow-hidden rounded-lg border border-line bg-surface"
+            >
+              <img
+                src={project.image}
+                alt={`Tela do projeto ${project.name}`}
+                loading="lazy"
+                className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+              />
+            </a>
 
-              {
-                data.map(item => (
-                  <div key={item.id}
-                  style={{backgroundImage: `url(${item.image})`}}
-                  className="shadow-lg shadow-[#040c16] group container rounded-md 
-                      flex justify-center text-center items-center mx-auto content-div">
-                        {/* hover effect */}
-                      <div className="opacity-0 group-hover:opacity-100">
-                       <span className='text-2xl font-bold tracking-wide'>{item.name}</span>
-                        <div className='pt-8 text-center'>
-                          <a href={item.live} target="_blank">
-                            <button  className="text-center rounded-lg px-4 py-3 m-2
-                               bg-white text-gray-700 font-bold text-lg">Demo</button>
-                          </a>
-                          <a href={item.github} target="_blank">
-                            <button  className="text-center rounded-lg px-4 py-3 m-2
-                               bg-white text-gray-700 font-bold text-lg">Code</button>
-                          </a>
-                        </div>
-                      </div>
-                  </div>
+            <div className="mt-5 flex items-start justify-between gap-4">
+              <div>
+                <h3 className="text-xl font-semibold">{project.name}</h3>
+                <p className="mt-1 text-muted">{project.description}</p>
+                <p className="mt-3 flex items-center gap-2 font-mono text-sm text-muted">
+                  <span aria-hidden className="h-2 w-2 rounded-full bg-led" />
+                  {hostOf(project.live)}
+                </p>
+              </div>
+            </div>
 
-                ))
-              }
-        
-
-      
-
-        </div>
-        </div>
-       
-      </div>
+            <div className="mt-4 flex gap-5 text-[0.95rem] font-medium">
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noreferrer"
+                className="text-signal underline-offset-4 hover:underline"
+              >
+                Abrir demo
+              </a>
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 text-ink underline-offset-4 hover:underline"
+                >
+                  <FaGithub aria-hidden /> Ver código
+                </a>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
-  )
-}
+  </section>
+)

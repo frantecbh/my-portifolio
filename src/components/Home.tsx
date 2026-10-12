@@ -1,46 +1,27 @@
-import { HiArrowNarrowRight } from "react-icons/hi"
-import { Link } from "react-scroll";
-import { TypeAnimation } from 'react-type-animation';
+import { Topology } from './Topology'
 
-
-
-
-export const Home = () => {
-  return (
-    <div id='home' className='w-full h-screen'>
-    {/* Container */}
-    <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
-      <p className='text-lime-500 font-semibold'>Hi, my name is</p>
-      <h1 className='text-4xl sm:text-7xl font-bold text-[#ccd6f6]'>
-        Francisco Menezes
-      </h1>
-      <h2 className='text-4xl sm:text-7xl font-bold text-[#8892b0]'>
-        
-        <TypeAnimation
-            sequence={["I'm a Full Stack Developer.", 1000]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-          />
-      </h2>
-      <p className='text-[#8892b0] py-4 max-w-[700px]'>
-      Sou um desenvolvedor full-stack especializado em construir experiências digitais excepcionais. Atualmente, estou focado em construir aplicativos web full-stack responsivos.
-      </p>
+export const Home = () => (
+  <section id="inicio" className="mx-auto max-w-page px-5 pb-20 pt-14 sm:px-8 lg:pb-28 lg:pt-24">
+    <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_1fr]">
       <div>
-      
-          <button className='text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-lime-600 hover:border-lime-600'>
-          <Link to='projetos' smooth={true} duration={500}>
-            Projetos
-          </Link>
-         
-          <span className='group-hover:rotate-90 duration-300'>
-            <HiArrowNarrowRight className='ml-3 ' />
-          </span>
-        </button>
-         
-     
+        <p className="mb-6 text-muted">Francisco Menezes, Grande Belo Horizonte</p>
+        <h1 className="display text-[clamp(2.6rem,7vw,5.4rem)]">
+          Da infraestrutura ao código.
+        </h1>
+        <p className="mt-8 max-w-prose text-lg text-muted">
+          Cuido de redes e servidores desde 2009. Hoje também construo aplicações web
+          completas com React, Next.js, Node.js e TypeScript, pensando desde a interface
+          até onde o sistema vai rodar.
+        </p>
+        <div className="mt-10 flex flex-wrap gap-3">
+          <a href="#projetos" className="btn-primary">Ver projetos</a>
+          <a href="#contato" className="btn-ghost">Falar comigo</a>
+        </div>
+      </div>
+
+      <div className="mx-auto w-full max-w-[520px]">
+        <Topology />
       </div>
     </div>
-  </div>
-  )
-}
+  </section>
+)

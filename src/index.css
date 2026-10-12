@@ -2,24 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-  li {
-    @apply px-4;
-    @apply cursor-pointer
-}
+@layer base {
+  :root {
+    --paper: 237 240 243;   /* #EDF0F3 */
+    --surface: 247 248 250; /* #F7F8FA */
+    --ink: 19 32 58;        /* #13203A */
+    --muted: 86 98 122;     /* #56627A */
+    --line: 201 209 220;    /* #C9D1DC */
+    --signal: 33 72 217;    /* #2148D9 */
+    --led: 24 160 88;       /* #18A058 */
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: 15 22 38;      /* #0F1626 */
+      --surface: 22 32 58;    /* #16203A */
+      --ink: 230 235 243;     /* #E6EBF3 */
+      --muted: 154 166 188;   /* #9AA6BC */
+      --line: 42 54 84;       /* #2A3654 */
+      --signal: 124 155 255;  /* #7C9BFF */
+      --led: 61 220 132;      /* #3DDC84 */
+      color-scheme: dark;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--signal));
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: rgb(var(--signal) / 0.2);
+  }
 }
 
-.content-div {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 250px;
+@layer components {
+  /* Expanded Archivo for headlines: the type itself carries the identity */
+  .display {
+    font-family: Archivo, sans-serif;
+    font-variation-settings: 'wdth' 125;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 0.98;
+  }
+
+  .section-title {
+    font-family: Archivo, sans-serif;
+    font-variation-settings: 'wdth' 112;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.1;
+    font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-[0.95rem] font-medium transition-colors;
+  }
+  .btn-primary {
+    @apply btn bg-ink text-paper hover:bg-signal;
+  }
+  .btn-ghost {
+    @apply btn border border-line text-ink hover:border-ink;
+  }
+
+  .field {
+    @apply w-full rounded-md border border-line bg-surface px-4 py-3 text-ink placeholder:text-muted/70 transition-colors focus:border-signal focus:outline-none;
+  }
 }
 
-.content-div:hover {
-  background-image: linear-gradient(
-      to right,
-      rgba(112, 157, 255, 0.8),
-      hsla(242, 74%, 61%, 0.8)   
-  )!important;
+/* Topology: the single page-load moment. Links draw out from the root host. */
+.topo-link {
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+  animation: topo-draw 900ms cubic-bezier(0.3, 0.7, 0.2, 1) forwards;
+}
+.topo-node {
+  opacity: 0;
+  animation: topo-in 400ms ease-out forwards;
+}
+@keyframes topo-draw {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes topo-in {
+  to { opacity: 1; }
+}
+.led-pulse {
+  animation: led 2.4s ease-in-out infinite;
+}
+@keyframes led {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .topo-link { animation: none; stroke-dashoffset: 0; }
+  .topo-node { animation: none; opacity: 1; }
+  .led-pulse { animation: none; }
 }

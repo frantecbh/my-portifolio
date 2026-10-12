@@ -1,18 +1,56 @@
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { links } from '../data/data'
 
+export const Contact = () => (
+  <section id="contato" className="border-t border-line bg-ink text-paper">
+    <div className="mx-auto grid max-w-page gap-12 px-5 py-20 sm:px-8 lg:grid-cols-2 lg:py-28">
+      <div>
+        <h2 className="section-title">Vamos conversar</h2>
+        <p className="mt-4 max-w-prose text-paper/75">
+          Tem um projeto, uma vaga ou uma ideia de produto? Mande uma mensagem e eu respondo
+          por e-mail.
+        </p>
+        <ul className="mt-8 space-y-3">
+          <li>
+            <a
+              href={links.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-3 underline-offset-4 hover:underline"
+            >
+              <FaLinkedin size={20} aria-hidden /> LinkedIn
+            </a>
+          </li>
+          <li>
+            <a
+              href={links.github}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-3 underline-offset-4 hover:underline"
+            >
+              <FaGithub size={20} aria-hidden /> GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
 
-export const Contact = () => {
-  return (
-    <section id='contact' className='w-full h-screen flex justify-center items-center p-4'>
-        <form action={import.meta.env.VITE_GETFORM_URL} method="POST" className='flex flex-col max-w-[600px] w-full'>
-            <div className='pb-8'>
-                <p className='text-4xl font-bold inline border-b-4 border-lime-600'>Contato</p>       
-            </div>
-            <input className='bg-transparent outline-none focus:border-lime-700 p-2 rounded-md border border-slate-600' type="text" placeholder='Name' name='name' />
-            <input className='my-4 p-2 bg-transparent outline-none focus:border-lime-700 rounded-md border border-slate-600' type="email" placeholder='Email' name='email' />
-            <textarea className='bg-transparent outline-none focus:border-lime-700 p-2 rounded-md border border-slate-600' name="message" rows={5} placeholder='Message'></textarea>
-            <button className='border border-slate-600 hover:bg-lime-600 hover:border-lime-600 px-4 py-3 my-8 mx-auto flex items-center duration-300'>Enviar</button>
-        </form>
-    </section>
-  )
-}
-
+      <form action={import.meta.env.VITE_GETFORM_URL} method="POST" className="space-y-5">
+        <div>
+          <label htmlFor="name" className="mb-2 block text-sm text-paper/80">Nome</label>
+          <input id="name" name="name" type="text" required autoComplete="name" className="field" />
+        </div>
+        <div>
+          <label htmlFor="email" className="mb-2 block text-sm text-paper/80">E-mail</label>
+          <input id="email" name="email" type="email" required autoComplete="email" className="field" />
+        </div>
+        <div>
+          <label htmlFor="message" className="mb-2 block text-sm text-paper/80">Mensagem</label>
+          <textarea id="message" name="message" rows={5} required className="field resize-y" />
+        </div>
+        <button type="submit" className="btn w-full bg-paper text-ink hover:bg-signal hover:text-paper sm:w-auto">
+          Enviar mensagem
+        </button>
+      </form>
+    </div>
+  </section>
+)

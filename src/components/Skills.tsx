@@ -1,70 +1,43 @@
-import HTML from '../assets/html.png';
-import CSS from '../assets/css.png';
-import JavaScript from '../assets/javascript.png';
-import ReactImg from '../assets/react.png';
-import Node from '../assets/node.png';
-import FireBase from '../assets/firebase.png';
-import GitHub from '../assets/github.png';
-import Tailwind from '../assets/tailwind.png';
-import Mongo from '../assets/mongo.png';
-import AWS from '../assets/aws.png';
+const groups = [
+  {
+    name: 'Front-end',
+    items: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'HTML e CSS'],
+  },
+  {
+    name: 'Back-end e dados',
+    items: ['Node.js', 'MongoDB', 'Firebase', 'APIs REST'],
+  },
+  {
+    name: 'Infra e nuvem',
+    items: ['AWS', 'Redes', 'Microsoft 365', 'Git e GitHub'],
+  },
+]
 
-export const Skills = () => {
-  return (
-    <div id='skills' className='w-full h-screen'>
-      {/* Container */}
-      <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
-          <div>
-              <p className='text-4xl font-bold inline border-b-4 border-lime-600 '>Experiências</p>
-              <p className='py-4'>Tecnologias que eu uso</p>
-          </div>
+export const Skills = () => (
+  <section id="stack" className="border-t border-line bg-surface">
+    <div className="mx-auto max-w-page px-5 py-20 sm:px-8 lg:py-28">
+      <h2 className="section-title">Stack</h2>
+      <p className="mt-4 max-w-prose text-muted">
+        Ferramentas que uso no dia a dia, do navegador ao servidor.
+      </p>
 
-          <div className='w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8'>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={HTML} alt="HTML icon" />
-                  <p className='my-4'>HTML</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={CSS} alt="HTML icon" />
-                  <p className='my-4'>CSS</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={JavaScript} alt="HTML icon" />
-                  <p className='my-4'>JAVASCRIPT</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={ReactImg} alt="HTML icon" />
-                  <p className='my-4'>REACT</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={GitHub} alt="HTML icon" />
-                  <p className='my-4'>GITHUB</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={Node} alt="HTML icon" />
-                  <p className='my-4'>NODE JS</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={Mongo} alt="HTML icon" />
-                  <p className='my-4'>MONGO DB</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={Tailwind} alt="HTML icon" />
-                  <p className='my-4'>TAILWIND</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={FireBase} alt="HTML icon" />
-                  <p className='my-4'>FIREBASE</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={AWS} alt="HTML icon" />
-                  <p className='my-4'>AWS</p>
-              </div>
-              
+      <div className="mt-12 grid gap-10 md:grid-cols-3 md:gap-0 md:divide-x md:divide-line">
+        {groups.map((group) => (
+          <div key={group.name} className="md:px-8 md:first:pl-0 md:last:pr-0">
+            <h3 className="text-lg font-semibold">{group.name}</h3>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {group.items.map((item) => (
+                <li
+                  key={item}
+                  className="rounded-full border border-line bg-paper px-3 py-1 text-[0.95rem]"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
+        ))}
       </div>
     </div>
-  );
-};
-
-
+  </section>
+)

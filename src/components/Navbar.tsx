@@ -1,105 +1,64 @@
-
-import { FaBars, FaTimes, FaLinkedin, FaGithub } from 'react-icons/fa'
-import imageLogo from '../assets/logo.png'
 import { useState } from 'react'
-import { Link } from 'react-scroll';
+import { FaBars, FaTimes } from 'react-icons/fa'
+
+const items = [
+  { href: '#sobre', label: 'Sobre' },
+  { href: '#stack', label: 'Stack' },
+  { href: '#projetos', label: 'Projetos' },
+  { href: '#contato', label: 'Contato' },
+]
 
 export const Navbar = () => {
-
-const [nav, setNav] = useState(false)
-
-const handelClickNav = () => {
-  setNav(!nav)
-}
+  const [open, setOpen] = useState(false)
 
   return (
-    <div className="fixed w-full h-[80px] flex justify-between items-center px-4  bg-slate-900">
-        <div>
-          <img src={imageLogo} alt="logo image" style={{width: '80px'}} />
-        </div> 
-       {/* desktop */}
-   
-          <ul className='hidden md:flex'>
-            <li className='hover:border-b-2 hover:border-lime-600'>
-             <Link to='home' smooth={true} duration={500}>
-                HOME
-              </Link>
+    <header className="sticky top-0 z-30 border-b border-line/70 bg-paper/85 backdrop-blur">
+      <nav className="mx-auto flex h-16 max-w-page items-center justify-between px-5 sm:px-8">
+        <a
+          href="#inicio"
+          className="font-display text-lg font-bold tracking-tight"
+          style={{ fontVariationSettings: "'wdth' 118" }}
+          onClick={() => setOpen(false)}
+        >
+          frantec.it
+        </a>
+
+        <ul className="hidden items-center gap-8 text-[0.95rem] text-muted md:flex">
+          {items.map((item) => (
+            <li key={item.href}>
+              <a href={item.href} className="transition-colors hover:text-ink">
+                {item.label}
+              </a>
             </li>
-            <li className='hover:border-b-2 hover:border-lime-600'>
-              <Link to='about' smooth={true} duration={500}>
-                SOBRE
-              </Link>
-            </li>
-            <li className='hover:border-b-2 hover:border-lime-600'>
-            <Link to='skills' smooth={true} duration={500}>
-            SKILLS
-          </Link>
-              </li>
-            <li className='hover:border-b-2 hover:border-lime-600'>
-            <Link to='projetos' smooth={true} duration={500}>
-            PROJETOS
-          </Link>
-              </li>
-            <li className='hover:border-b-2 hover:border-lime-600'>
-            <Link to='contact' smooth={true} duration={500}>
-            CONTATO
-          </Link>
-              </li>
-          </ul>  
-    
-        {/* Hamburger */}   
-            <div onClick={handelClickNav} className='md:hidden z-10'>
-              {!nav ? <FaBars /> : <FaTimes />  }                
-            </div>
-        {/* mobile */}   
-        <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 max-w-[50%] w-full h-screen bg-slate-900 flex flex-col justify-center items-center' }>
-            <li className='py-6 text-4xl'>
-                <Link onClick={handelClickNav}  to='home' smooth={true} duration={500}>
-                  Home
-                </Link>
-            </li>
-            <li className='py-6 text-4xl'> 
-              <Link onClick={handelClickNav}  to='about' smooth={true} duration={500}>
-                Sobre
-              </Link></li>
-            <li className='py-6 text-4xl'> 
-              <Link onClick={handelClickNav}  to='skills' smooth={true} duration={500}>
-            Skills
-            </Link></li>
-            <li className='py-6 text-4xl'> 
-              <Link onClick={handelClickNav}  to='projetos' smooth={true} duration={500}>
-                  Projetos
-              </Link></li>
-            <li className='py-6 text-4xl'>
-            <Link onClick={handelClickNav}  to='contact' smooth={true} duration={500}>
-                Contato
-              </Link>
-            </li>
-          </ul> 
-       {/* social icons */}  
-       <div className='hidden lg:flex fixed flex-col top-[35%] left-0'>
-        <ul className=''>
-          <li className='w-40 h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600'>
-           <a
-              className='flex justify-between items-center w-full'
-              href='https://www.linkedin.com/in/francisco-menezes-875a0a36/'
-              target="_blank"
-            >
-              Linkedin <FaLinkedin size={30} />
-            </a>
-          </li>
-          <li className='w-40 h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]'>
-            <a
-              className='flex justify-between items-center w-full'
-              href='https://github.com/frantecbh'
-               target="_blank"
-            >
-              Github <FaGithub size={30} />
-            </a>
-          </li>
-        
+          ))}
         </ul>
-      </div>
-    </div>
+
+        <button
+          type="button"
+          className="-mr-2 p-2 md:hidden"
+          aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+          aria-expanded={open}
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <FaTimes size={20} /> : <FaBars size={20} />}
+        </button>
+      </nav>
+
+      {open && (
+        <ul className="border-t border-line bg-paper px-5 pb-4 md:hidden">
+          {items.map((item) => (
+            <li key={item.href}>
+              <a
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="block border-b border-line/60 py-4 text-lg"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </header>
   )
 }
