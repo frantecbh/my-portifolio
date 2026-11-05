@@ -16,11 +16,10 @@ export const Navbar = () => {
       <nav className="mx-auto flex h-16 max-w-page items-center justify-between px-5 sm:px-8">
         <a
           href="#inicio"
-          className="font-display text-lg font-bold tracking-tight"
-          style={{ fontVariationSettings: "'wdth' 118" }}
+          className="font-display text-[22px] font-extrabold tracking-tight"
           onClick={() => setOpen(false)}
         >
-          frantec.it
+          frantec<span className="text-signal">.it</span>
         </a>
 
         <ul className="hidden items-center gap-8 text-[0.95rem] text-muted md:flex">

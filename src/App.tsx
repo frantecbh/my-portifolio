@@ -16,8 +16,8 @@ export default function App() {
         <Projetos />
         <Contact />
       </main>
-      <footer className="bg-ink text-paper/60">
-        <div className="mx-auto flex max-w-page flex-col gap-2 border-t border-paper/15 px-5 py-8 text-sm sm:flex-row sm:justify-between sm:px-8">
+      <footer className="text-muted">
+        <div className="mx-auto flex max-w-page flex-col gap-2 border-t border-line px-5 py-8 text-sm sm:flex-row sm:justify-between sm:px-8">
           <p>© {new Date().getFullYear()} Francisco Menezes</p>
           <p>Feito com React, TypeScript e Tailwind CSS</p>
         </div>

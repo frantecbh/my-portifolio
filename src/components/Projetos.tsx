@@ -16,7 +16,7 @@ export const Projetos = () => (
               href={project.live}
               target="_blank"
               rel="noreferrer"
-              className="group block overflow-hidden rounded-lg border border-line bg-surface"
+              className="group block overflow-hidden rounded-2xl border border-line bg-surface"
             >
               <img
                 src={project.image}
