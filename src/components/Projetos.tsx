@@ -22,11 +22,6 @@ const solucoes = [
     text: 'Plataforma SaaS para motoristas de aplicativo venderem anúncios em um tablet atrás do banco, com planos, pagamentos e relatórios.',
     url: 'https://midiabordo.com.br',
   },
-  {
-    name: 'MyDriveControl',
-    text: 'Controle financeiro e de turnos para motoristas de aplicativo. Protótipo validado, em reconstrução com código próprio.',
-    url: 'https://mydrivecontrol.base44.app',
-  },
 ]
 
 export const Projetos = () => (
