@@ -101,7 +101,7 @@ export const Topology = () => (
       })}
     </svg>
     <figcaption className="mt-3 text-sm text-muted">
-      Projetos no ar agora. Toque em um host para abrir.
+      Aplicações que mantenho no ar em frantecit.com.br. Toque em um host para abrir.
     </figcaption>
   </figure>
 )

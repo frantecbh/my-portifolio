@@ -3,7 +3,8 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 
 const items = [
   { href: '#sobre', label: 'Sobre' },
-  { href: '#stack', label: 'Stack' },
+  { href: '#experiencia', label: 'Experiência' },
+  { href: '#competencias', label: 'Competências' },
   { href: '#projetos', label: 'Projetos' },
   { href: '#contato', label: 'Contato' },
 ]

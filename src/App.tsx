@@ -1,5 +1,6 @@
 import { About } from './components/About'
 import { Contact } from './components/Contact'
+import { Experiencia } from './components/Experiencia'
 import { Home } from './components/Home'
 import { Navbar } from './components/Navbar'
 import { Projetos } from './components/Projetos'
@@ -12,6 +13,7 @@ export default function App() {
       <main>
         <Home />
         <About />
+        <Experiencia />
         <Skills />
         <Projetos />
         <Contact />
